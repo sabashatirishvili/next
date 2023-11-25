@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  background-color: cadetblue;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  padding: 2rem;
+}
+
+.main > div {
+  display: flex;
+  gap: 2rem;
+}
