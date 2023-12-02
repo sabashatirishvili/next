@@ -1,6 +1,7 @@
+
+
 .main {
   display: flex;
-  background-color: cadetblue;
   justify-content: space-between;
   align-items: center;
   flex-flow: row nowrap;
@@ -10,4 +11,24 @@
 .main > div {
   display: flex;
   gap: 2rem;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.logout {
+  border: none;
+  padding: 5px;
+  background-color: #53c28b;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
 }
