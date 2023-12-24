@@ -18,6 +18,7 @@ function Navbar() {
       <Link className={styles.logo} href="/">
         Lamamia
       </Link>
+      
 
       <div className={styles.links}>
         <DarkModeToggle />

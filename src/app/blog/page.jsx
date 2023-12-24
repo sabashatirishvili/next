@@ -4,7 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getData = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts/", {cache: "force-cache"});
+  const res = await fetch("https://api.escuelajs.co/api/v1/products", {
+    cache: "force-cache",
+  });
   if (!res.ok) {
     throw new Error("Data fetch failed.");
   }
@@ -19,10 +21,14 @@ async function Blog() {
   return (
     <div className={styles.pageContainer}>
       {data.map((blogPost) => (
-        <Link key={blogPost.id} href={`blog/${blogPost.id}`} className={styles.container}>
+        <Link
+          key={blogPost.id}
+          href={`blog/${blogPost.id}`}
+          className={styles.container}
+        >
           <div className={styles.imageContainer}>
             <Image
-              src="https://images.pexels.com/photos/17475709/pexels-photo-17475709/free-photo-of-a-person-standing-on-top-of-a-snowy-mountain.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src={blogPost.images[0]}
               alt="blog_image"
               width={400}
               height={200}
@@ -31,7 +37,7 @@ async function Blog() {
           </div>
           <div className={styles.content}>
             <h1 className={styles.title}>{blogPost.title}</h1>
-            <p className={styles.desc}>{blogPost.body}</p>
+            <p className={styles.desc}>{blogPost.description}</p>
           </div>
         </Link>
       ))}
